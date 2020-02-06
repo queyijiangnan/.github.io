@@ -64,6 +64,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python黑帽子学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/07/python%E9%BB%91%E5%B8%BD%E5%AD%90%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-02-06T17:07:25.000Z" itemprop="datePublished">2020-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/07/python%E9%BB%91%E5%B8%BD%E5%AD%90%E5%AD%A6%E4%B9%A0/">python黑帽子学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="《python黑帽子》学习日志"><a href="#《python黑帽子》学习日志" class="headerlink" title="《python黑帽子》学习日志"></a>《python黑帽子》学习日志</h1><p>虽然论文还没有解决，但我丝毫不慌地开了新坑</p>
+<h2 id="2月7日"><a href="#2月7日" class="headerlink" title="2月7日"></a>2月7日</h2><p>import socket<br>import threading<br>target_host = ‘<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">www.baidu.com&#39;</a><br>target_post = 80<br>client =socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br>client.connect((target_host,target_post))<br>client.send(“GET”)<br>host  = “127.0.0.1”<br>port = 80<br>client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)<br>str1 = “AAABBBCCC”<br>client.sendto(str1.encode(),(host,port))<br>data,addr = client.recvfrom(4096)<br>print(data)</p>
+<h3 id="str-encode-和str-decode-用来编码和解码"><a href="#str-encode-和str-decode-用来编码和解码" class="headerlink" title="str.encode()和str.decode()用来编码和解码"></a>str.encode()和str.decode()用来编码和解码</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/07/python%E9%BB%91%E5%B8%BD%E5%AD%90%E5%AD%A6%E4%B9%A0/" data-id="ck6b02jx00000wctkaylwf15l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pytorch学习记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/04/pytorch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
@@ -87,7 +125,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>等待后续更新</p>
-<h1 id="2月4日-看至cifra10分类"><a href="#2月4日-看至cifra10分类" class="headerlink" title="2月4日 看至cifra10分类"></a>2月4日 看至cifra10分类</h1>
+<h1 id="2月4日-看至cifra10分类"><a href="#2月4日-看至cifra10分类" class="headerlink" title="2月4日 看至cifra10分类"></a>2月4日 看至cifra10分类</h1><h1 id="2月7日准备看三章以上，在此立下flag"><a href="#2月7日准备看三章以上，在此立下flag" class="headerlink" title="2月7日准备看三章以上，在此立下flag"></a>2月7日准备看三章以上，在此立下flag</h1>
       
     </div>
     <footer class="article-footer">
@@ -123,7 +161,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="关于cvpr论文D2-net的理解和进度"><a href="#关于cvpr论文D2-net的理解和进度" class="headerlink" title="关于cvpr论文D2-net的理解和进度"></a>关于cvpr论文D2-net的理解和进度</h3><h2 id="今日更新z"><a href="#今日更新z" class="headerlink" title="今日更新z"></a>今日更新z</h2><h3 id="1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"><a href="#1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。" class="headerlink" title="1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"></a>1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。</h3><pre><code>1.dij = Fij:,d ∈ Rn ,向量d的集合
+        <h1 id="关于cvpr论文D2-net的理解和进度"><a href="#关于cvpr论文D2-net的理解和进度" class="headerlink" title="关于cvpr论文D2-net的理解和进度"></a>关于cvpr论文D2-net的理解和进度</h1><p>最近几天把论文彻底读懂然后开始训练新模型，时间很紧</p>
+<h2 id="1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"><a href="#1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。" class="headerlink" title="1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"></a>1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。</h2><pre><code>1.dij = Fij:,d ∈ Rn ,向量d的集合
 2.Dk = F::k,Dk ∈ Rh×w  2维响应D的连接</code></pre><p>后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss（扩展的三重排位损失）</p>
 
       
@@ -168,6 +207,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/02/07/python%E9%BB%91%E5%B8%BD%E5%AD%90%E5%AD%A6%E4%B9%A0/">python黑帽子学习</a>
+          </li>
         
           <li>
             <a href="/2020/02/04/pytorch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">pytorch学习记录</a>
