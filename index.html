@@ -87,8 +87,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="《python黑帽子》学习日志"><a href="#《python黑帽子》学习日志" class="headerlink" title="《python黑帽子》学习日志"></a>《python黑帽子》学习日志</h1><p>虽然论文还没有解决，但我丝毫不慌地开了新坑</p>
-<h2 id="2月7日"><a href="#2月7日" class="headerlink" title="2月7日"></a>2月7日</h2><p>import socket<br>import threading<br>target_host = ‘<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">www.baidu.com&#39;</a><br>target_post = 80<br>client =socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br>client.connect((target_host,target_post))<br>client.send(“GET”)<br>host  = “127.0.0.1”<br>port = 80<br>client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)<br>str1 = “AAABBBCCC”<br>client.sendto(str1.encode(),(host,port))<br>data,addr = client.recvfrom(4096)<br>print(data)</p>
-<h3 id="str-encode-和str-decode-用来编码和解码"><a href="#str-encode-和str-decode-用来编码和解码" class="headerlink" title="str.encode()和str.decode()用来编码和解码"></a>str.encode()和str.decode()用来编码和解码</h3>
+<h2 id="2月7日"><a href="#2月7日" class="headerlink" title="2月7日"></a>2月7日</h2><pre><code>import socket
+import threading
+target_host = &apos;www.baidu.com&apos;
+target_post = 80
+client =socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect((target_host,target_post))
+client.send(&quot;GET&quot;)
+host  = &quot;127.0.0.1&quot;
+client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+str1 = &quot;AAABBBCCC&quot;
+client.sendto(str1.encode(),(host,port))
+data,addr = client.recvfrom(4096)
+print(data)
+### str.encode()和str.decode()用来编码和解码</code></pre>
       
     </div>
     <footer class="article-footer">
