@@ -210,8 +210,9 @@ print(data)
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="关于cvpr论文D2-net的理解和进度"><a href="#关于cvpr论文D2-net的理解和进度" class="headerlink" title="关于cvpr论文D2-net的理解和进度"></a>关于cvpr论文D2-net的理解和进度</h1><p>最近几天把论文彻底读懂然后开始训练新模型，时间很紧</p>
-<h2 id="1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"><a href="#1-图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。" class="headerlink" title="1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。"></a>1.图像处理，将图像输入模型后得到一个三维矩阵，矩阵有两种描述方式。</h2><pre><code>1.dij = Fij:,d ∈ Rn ,向量d的集合
-2.Dk = F::k,Dk ∈ Rh×w  2维响应D的连接</code></pre><p>后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss（扩展的三重排位损失）</p>
+<h2 id="1-图像处理，将图像输入模型后得到一个三维矩阵。"><a href="#1-图像处理，将图像输入模型后得到一个三维矩阵。" class="headerlink" title="1.图像处理，将图像输入模型后得到一个三维矩阵。"></a>1.图像处理，将图像输入模型后得到一个三维矩阵。</h2><pre><code>apply a CNN F on the input image I to obtain a 3D tensor F = F(I)，F ∈ Rh×w×n
+将输入图像I放到CNN中从而获得输出</code></pre><h2 id="2-对获得的3D-Tensor-F的两种解释"><a href="#2-对获得的3D-Tensor-F的两种解释" class="headerlink" title="2.对获得的3D Tensor F的两种解释"></a>2.对获得的3D Tensor F的两种解释</h2><pre><code>1.dij = Fij:,d ∈ Rn ,向量d的集合  i = 1,...,h and j = 1,...w, h和w分别为图像的长和宽
+2.Dk = F::k,Dk ∈ Rh×w  2维响应D的连接--</code></pre><p>后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss（扩展的三重排位损失）</p>
 
       
     </div>
