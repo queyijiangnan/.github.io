@@ -211,8 +211,14 @@ print(data)
       
         <h1 id="关于cvpr论文D2-net的理解和进度"><a href="#关于cvpr论文D2-net的理解和进度" class="headerlink" title="关于cvpr论文D2-net的理解和进度"></a>关于cvpr论文D2-net的理解和进度</h1><p>最近几天把论文彻底读懂然后开始训练新模型，时间很紧</p>
 <h2 id="1-图像处理，将图像输入模型后得到一个三维矩阵。"><a href="#1-图像处理，将图像输入模型后得到一个三维矩阵。" class="headerlink" title="1.图像处理，将图像输入模型后得到一个三维矩阵。"></a>1.图像处理，将图像输入模型后得到一个三维矩阵。</h2><pre><code>apply a CNN F on the input image I to obtain a 3D tensor F = F(I)，F ∈ Rh×w×n
-将输入图像I放到CNN中从而获得输出</code></pre><h2 id="2-对获得的3D-Tensor-F的两种解释"><a href="#2-对获得的3D-Tensor-F的两种解释" class="headerlink" title="2.对获得的3D Tensor F的两种解释"></a>2.对获得的3D Tensor F的两种解释</h2><pre><code>1.dij = Fij:,d ∈ Rn ,向量d的集合  i = 1,...,h and j = 1,...w, h和w分别为图像的长和宽
-2.Dk = F::k,Dk ∈ Rh×w  2维响应D的连接--
+将输入图像I放到CNN中从而获得输出</code></pre><h2 id="2-对获得的3D-Tensor-F的两种解释"><a href="#2-对获得的3D-Tensor-F的两种解释" class="headerlink" title="2.对获得的3D Tensor F的两种解释"></a>2.对获得的3D Tensor F的两种解释</h2><pre><code>1.Feature Description
+dij = Fij:,d ∈ Rn ,向量d的集合  i = 1,...,h and j = 1,...w, h和w分别为图像的长和宽，
+这种情况可以便捷地使用 Euclidean distance（欧式距离）来获得图像间的对应点。在训练过程中，
+描述符将会被不断调整使得场景中同样的点会产生相同的描述符，即使图片包含了强烈的外观变化。
+在比较描述符前使用了L2正则化（Euclidean distance）。ˆ dij = dij/kdijk2
+2.Feature Detection
+&apos;Dk = F::k,Dk ∈ Rh×w  另一种对F的解释是2维响应D的连接--
+这一过程分为 Hard Detction和soft Detection
 后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss（扩展的三重排位损失）</code></pre>
       
     </div>
