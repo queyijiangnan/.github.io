@@ -86,15 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、为什么深层神经网络难以训练？"><a href="#一、为什么深层神经网络难以训练？" class="headerlink" title="一、为什么深层神经网络难以训练？"></a>一、为什么深层神经网络难以训练？</h2><pre><code>1、梯度消失。梯度消失是指通过隐藏层从后向前看，梯度会变得越来越小，说明前面层的学习会显著慢于后面层的学习，所以学习会卡住
-，除非梯度变大。
+        <h2 id="一、为什么深层神经网络难以训练？"><a href="#一、为什么深层神经网络难以训练？" class="headerlink" title="一、为什么深层神经网络难以训练？"></a>一、为什么深层神经网络难以训练？</h2><pre><code>1、梯度消失。梯度消失是指通过隐藏层从后向前看，梯度会变得越来越小，说明前面层的学习会显著慢于后面层的学习，
+所以学习会卡住，除非梯度变大。
 
-梯度消失的原因：学习率的大小，网络参数的初始化，激活函数的边缘效应等。在深层神经网络中，每一个神经元计算得到的梯度都会传递
-给前一层，较浅层的神经元接收到的梯度受到之前所有层梯度的影响。如果计算得到的梯度值非常小，随着层数增多，求出的梯度更新信息
-将会以指数形式衰减，就会发生梯度消失。
+梯度消失的原因：学习率的大小，网络参数的初始化，激活函数的边缘效应等。在深层神经网络中，每一个神经元计算得
+到的梯度都会传递给前一层，较浅层的神经元接收到的梯度受到之前所有层梯度的影响。如果计算得到的梯度值非常小，
+随着层数增多，求出的梯度更新信息将会以指数形式衰减，就会发生梯度消失。
 
-2、梯度爆炸。在深度网络或循环神经网络（Recurrent Neural Network, RNN）等网络结构中，梯度可在网络更新的过程中不断累积，变
-成非常大的梯度，导致网络权重值的大幅更新，使得网络不稳定；在极端情况下，权重值甚至会溢出，变为 [公式] 值，再也无法更新。
+2、梯度爆炸。在深度网络或循环神经网络（Recurrent Neural Network, RNN）等网络结构中，梯度可在网络更新的
+过程中不断累积，变成非常大的梯度，导致网络权重值的大幅更新，使得网络不稳定；在极端情况下，权重值甚至会溢出，
+变为 [公式] 值，再也无法更新。
 
 3、权重矩阵的退化导致模型的有效自由度减少。
 
@@ -501,11 +502,11 @@ dij = Fij: ,d ∈ Rn ,向量d的集合  i = 1,...,h and j = 1,...w, h和w分别�
 Dk = F::k,Dk ∈ Rh×w  另一种对F的解释是2维响应D的连接--可以将函数F认为是n个不同的特征探测函数Dk
 ,每个函数产生一个2D的相应图Dk。产生的相应图类似于SIFT和Harris角点检测中的DoG（高斯差分）相响应图。
 在工作中，这些原始分数经过post-processed来选择出局部的一个子集来作为 output keypoints.
-这一过程分为 Hard Detction和soft Detection
-Hard Feature Detection
-Soft Feature Detection
-
-后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss（扩展的三重排位损失）</code></pre>
+这一过程分为 Hard Detction和soft Detection</code></pre><h3 id="Hard-Feature-Detection"><a href="#Hard-Feature-Detection" class="headerlink" title="Hard Feature Detection"></a>Hard Feature Detection</h3><h3 id="Soft-Feature-Detection"><a href="#Soft-Feature-Detection" class="headerlink" title="Soft Feature Detection"></a>Soft Feature Detection</h3><pre><code>后面涉及响应分数的计算方法，α和β的计算，以及 extension to the triplet margin ranking loss
+（、扩展的三重排位损失）</code></pre><h2 id="4-训练数据"><a href="#4-训练数据" class="headerlink" title="4.训练数据"></a>4.训练数据</h2><pre><code>使用MegaDepth dataset数据集。
+为了获得对应关系，先考虑稀疏sfm点云中至少含有50%重叠的图像对（等会写个SFM的解析)。
+对每个图像对，第二张图中每个关键点的深度信息都会被投影道第一张图中。接着对第一张图的
+深度图进行深度检查，以此去除被遮挡的像素。</code></pre>
       
     </div>
     <footer class="article-footer">
